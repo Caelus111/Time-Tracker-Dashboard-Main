@@ -93,4 +93,5 @@ function showMonthlyData(data) {
   });
 }
 
+
 fetchData();
