@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --report-card-color: hsl(246, 80%, 60%);
+  --bg-color: hsl(226, 43%, 10%);
+  --card-bg-color: hsl(235, 46%, 20%);
+  --card-hover-color: hsl(236, 41%, 33%);
+  --hover-color: hsl(240, 29%, 73%);
+  --card-work-color: hsl(15, 100%, 70%);
+  --card-play-color: hsl(195, 74%, 62%);
+  --card-study-color: hsl(348, 100%, 68%);
+  --card-exercise-color: hsl(145, 58%, 55%);
+  --card-social-color: hsl(264, 64%, 52%);
+  --card-selfCare-color: hsl(43, 84%, 65%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--bg-color);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+p {
+  font-size: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
+}
+
+span {
+  font-size: clamp(1.8rem, 1.2848rem + 2.5761vi, 3.2813rem);
+  font-weight: 300;
+}
+
+button {
+  color: var(--hover-color);
+  font-family: "Rubik", sans-serif;
+  font-size: clamp(1rem, 0.9565rem + 0.2174vi, 1.125rem);
+  background: transparent;
+  border: 0;
+}
+
+small {
+  color: var(--hover-color);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fit, minmax(9em, 1fr));
+  width: 90%;
+  height: 100%;
+  gap: 27px;
+  color: #fff;
+  margin-top: 80px;
+  justify-content: center;
+}
+
+.report-card {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  grid-row: 1;
+}
+
+.report-header {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--report-card-color);
+  border-radius: 15px;
+  z-index: 10;
+}
+
+.report-header span {
+  color: #fff;
+  font-size: clamp(1.5rem, 1.2065rem + 1.4674vi, 2.3438rem);
+}
+
+.report-header p {
+  font-weight: 400;
+  color: var(--hover-color);
+}
+
+.report-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 60px;
+  background-color: var(--card-bg-color);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 30px;
+  margin-top: -12px;
+}
+
+.report-details button {
+  transform: translateY(5px);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.report-details button:hover {
+  color: #fff;
+}
+
+.report-card img {
+  border: solid #fff 3px;
+  border-radius: 50%;
+  width: 72px;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.card-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  z-index: -10;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card:nth-child(2) .card-header {
+  background-color: var(--card-work-color);
+}
+
+.card:nth-child(3) .card-header {
+  background-color: var(--card-play-color);
+}
+
+.card:nth-child(4) .card-header {
+  background-color: var(--card-study-color);
+}
+
+.card:nth-child(5) .card-header {
+  background-color: var(--card-exercise-color);
+}
+
+.card:nth-child(6) .card-header {
+  background-color: var(--card-social-color);
+}
+.card:nth-child(7) .card-header {
+  background-color: var(--card-selfCare-color);
+}
+
+.card-header img {
+  position: absolute;
+  top: 0%;
+  right: 5%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  padding: 24px;
+  margin-top: -50px;
+  background: var(--card-bg-color);
+  z-index: 1000;
+  border-radius: 15px;
+  transition: 0.2s;
+}
+
+.hover {
+  background-color: var(--card-hover-color);
+}
+
+.card-body .card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.card-body .card-title img {
+  transition: 0.2s;
+  opacity: 0.7;
+}
+
+.card-body .card-title img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.card-body .total-hours {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.active {
+  color: #fff;
+}
+
+
+
+
+
+
+/* Queries */
+@media (min-width: 1120px) {
+  main {
+    height: 100vh;
+  }
+
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(16.0625em, 1fr));
+    grid-template-rows: repeat(2, minmax(15.375em, 1fr));
+    height: 32.5em;
+    width: 70em;
+    margin: 0;
+  }
+
+  .report-card {
+    /* position: relative; */
+    display: flex;
+    justify-content: start;
+    grid-row: 1 / span 2;
+    gap: 50px;
+    border-radius: 15px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .report-card img {
+    width: 85px;
+  }
+
+  .report-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22.25em;
+    flex-direction: column;
+    align-items: start;
+    padding: 30px;
+    gap: 35px;
+  }
+
+  .report-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    gap: 10px;
+    height: 11.1875em;
+    /* z-index: -1; */
+  }
+
+  .report-details button {
+    cursor: pointer;
+    text-align: left;
+    transform: translateY(0px);
+  }
+
+  .card-header {
+    height: 3.75em;
+  }
+
+  .card-header img {
+    width: 30%;
+    height: 100%;
+  }
+
+  .card-body {
+    height: 12.375em;
+    padding: 30px;
+  }
+
+  .card-body .card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-body .total-hours {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 10px;
+  }
+}
+
+@media (920px < width < 1120px) {
+  main {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    height: 100vh;
+    width: 100%;
+  }
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(16.0625em, 1fr));
+    grid-template-rows: repeat(4, minmax(15.375em, 1fr));
+    height: 32.5em;
+    width: 70em;
+    margin: 40px;
+  }
+  .report-card {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    grid-column: 1 / span 3;
+  }
+}
