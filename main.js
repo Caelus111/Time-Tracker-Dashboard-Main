@@ -11,7 +11,7 @@ async function fetchData(params) {
 }
 
 function showData(data) {
-  
+
   timeBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       if (btn.textContent === "Daily") {
@@ -55,7 +55,7 @@ function showDailyData(data) {
             </div>
             <div class="total-hours">
               <span>${data[index].timeframes.daily.current}hrs</span>
-              <small>Last Week - ${data[index].timeframes.daily.previous}hrs</small>
+              <small>Last Day - ${data[index].timeframes.daily.previous}hrs</small>
             </div>
         `;
     cards[index].appendChild(card);
@@ -86,7 +86,7 @@ function showMonthlyData(data) {
             </div>
             <div class="total-hours">
               <span>${data[index].timeframes.monthly.current}hrs</span>
-              <small>Last Week - ${data[index].timeframes.monthly.previous}hrs</small>
+              <small>Last Month - ${data[index].timeframes.monthly.previous}hrs</small>
             </div>
         `;
     cards[index].appendChild(card);
